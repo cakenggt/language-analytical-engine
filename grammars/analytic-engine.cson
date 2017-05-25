@@ -1,0 +1,104 @@
+# If this is your first time writing a language grammar, check out:
+#   - http://manual.macromates.com/en/language_grammars
+
+'scopeName': 'source.analytical-engine'
+'name': 'Analytical Engine'
+'fileTypes': [
+  'ae'
+]
+'patterns': [
+  {
+    'name': 'keyword.control'
+    'match': '^(\\(\\??|\\{\\??|\\}\\{|\\)|\\})'
+  },
+  {
+    'match': '\\. .*$'
+    'name': 'comment'
+  },
+  {
+    'match': '^\\s+.*$'
+    'name': 'comment'
+  },
+  {
+    'match': '^(N|S|Z|L|C(F|B)\\??)(\\d+\'?)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '3':
+        'name': 'variable'
+  },
+  {
+    'match': '^(\\<|\\>)(\\d*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'variable'
+  },
+  {
+    'match': '^(\\+|\\-|\\−|\\/|\\÷|\\*|\\×|\\<|\\>|DX|DY|D\\+|D-|P|B|H)'
+    'name': 'keyword.operator'
+  },
+  {
+    'match': '^(N)(\\d+)\\s+(-?\\d+(\\.\\d+)?)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'variable'
+      '3':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A write annotation )(.*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A set decimal places to )([\\+\\-]?\\d+)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A write numbers as )(.*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A include cards )(.*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A include from library cards for )(.*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  },
+  {
+    'match': '^(A .*)'
+    'name': 'keyword.operator'
+  },
+  {
+    'match': '^(DC) (\\S*)'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
+  }
+]
