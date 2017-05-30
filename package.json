@@ -1,7 +1,7 @@
 {
   "name": "language-analytical-engine",
   "version": "0.0.0",
-  "description": "A short description of your language package",
+  "description": "Language package for Analytical Engine files",
   "keywords": [
     "language",
     "grammar"
@@ -9,5 +9,14 @@
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cakenggt/language-analytical-engine.git"
+  },
+  "author": "Alec Lownes",
+  "bugs": {
+    "url": "https://github.com/cakenggt/language-analytical-engine/issues"
+  },
+  "homepage": "https://github.com/cakenggt/language-analytical-engine#readme"
 }
