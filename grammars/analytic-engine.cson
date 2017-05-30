@@ -12,35 +12,27 @@
     'match': '^(\\(\\??|\\{\\??|\\}\\{|\\)|\\})'
   },
   {
-    'match': '\\. .*$'
+    'match': '^(\\s+|\\.).*$'
     'name': 'comment'
   },
-  {
-    'match': '^\\s+.*$'
-    'name': 'comment'
-  },
-  {
-    'match': '^(N|S|Z|L|C(F|B)\\??)(\\d+\'?)'
-    'captures':
-      '1':
-        'name': 'keyword.operator'
-      '3':
-        'name': 'variable'
-  },
-  {
-    'match': '^(\\<|\\>)(\\d*)'
+  {# matching cards with no params or combo
+    'match': '^(\\+|\\-|\\−|\\/|\\÷|\\*|\\×|\\<|\\>|DX|DY|D\\+|D-|P|B)\\s(.*)$'
     'captures':
       '1':
         'name': 'keyword.operator'
       '2':
-        'name': 'variable'
+        'name': 'comment'
   },
-  {
-    'match': '^(\\+|\\-|\\−|\\/|\\÷|\\*|\\×|\\<|\\>|DX|DY|D\\+|D-|P|B|H)'
-    'name': 'keyword.operator'
+  {# match halt with a written message on it
+    'match': '^(H)\\s(.*)$'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'constant'
   },
-  {
-    'match': '^(N)(\\d+)\\s+(-?\\d+(\\.\\d+)?)'
+  {# match cards with number combo and param
+    'match': '^(N)(\\d+)\\s+(-?\\d+)\\s(.*)$'
     'captures':
       '1':
         'name': 'keyword.operator'
@@ -48,6 +40,30 @@
         'name': 'variable'
       '3':
         'name': 'constant'
+      '4':
+        'name': 'comment'
+  },
+  {# match number with decimal specifically
+    'match': '^(N)(\\d+)\\s+(-?\\d+\\.\\d+)\\s(.*)$'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '2':
+        'name': 'variable'
+      '3':
+        'name': 'constant'
+      '4':
+        'name': 'comment'
+  },
+  {# matching cards with number combo
+    'match': '^(S|Z|L|C(F|B)\\??|\\<|\\>)(\\d+\'?)\\s(.*)$'
+    'captures':
+      '1':
+        'name': 'keyword.operator'
+      '3':
+        'name': 'variable'
+      '4':
+        'name': 'comment'
   },
   {
     'match': '^(A write annotation )(.*)'

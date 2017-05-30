@@ -1,0 +1,46 @@
+ space comment
+. period comment
+A set decimal places to 10
+A write numbers with decimal point
+
+N108 0                  . Set to 1 to print integration steps
+N155 -1                 . period comment
+N200 5.5 asfdasd
+N456 -53.4 asdfga
+
+A write annotation . asfasgsfd
+
+{
++
+L000
+L001
+}
+{?
++
+L000
+L001
+}
+{?
++
+L000
+L001
+}{
+-
+L000
+L001
+}
+(
++
+L000
+L001
+)
+(?
++
+L000 asdfafdga
+L001 ashsg
+)
+
+H test halt message
+
+A include cards filename
+A include from library cards for libname
